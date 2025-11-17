@@ -1,36 +1,6 @@
-const Home = () => {
-  return (
-   <div>
-    <h1> Welcome to Splash App </h1>
-   </div>
-  )
-}
-import type { ReactNode } from "react";
-
-export interface PageRouteProps {
-  pageRoute: string;
-}
-
-export interface ButtonProps {
-  buttonLabel: string;
-  buttonSize?: string;
-  buttonBackgroundColor?: "red" | "blue" | "orange" | "green";
-  action?: () => void;
-}
-
-export interface LayoutProps {
-  children: ReactNode;
-}
-
-
-export default Home;
-
 import Button from "@/components/common/Button";
 import { useRouter } from "next/router";
-
-interface PageRouteProps {
-  pageRoute: string;
-}
+import { PageRouteProps } from "@/interface";
 
 export default function Home() {
   const router = useRouter();
