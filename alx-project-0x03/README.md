@@ -1,28 +1,11 @@
-# Next.js Project Setup and Basics
+# Splash App (alx-project-0x03)
 
-هذا مشروع تدريب على **Next.js + TypeScript + Tailwind CSS** ضمن مشروع:
+This is the Splash App project for the ALX Reactify TS: Mastering Advanced TypeScript in React module.
 
-> SoloForge: Mastering Project Autonomy
+It demonstrates:
 
-## المتطلبات
-
-- Node.js v16 أو أحدث
-- npm أو yarn
-- معرفة أساسية بـ React و TypeScript
-
-## التشغيل
-
-```bash
-npm install
-npm run dev -- -p 3000
-```
-
-ثم افتح المتصفح على: <http://localhost:3000>
-
-## الصفحات
-
-- `/` صفحة الترحيب
-- `/home` الصفحة الرئيسية مع بطاقة ومودال لإضافة منشورات
-- `/about` صفحة التعريف مع أزرار مختلفة
-- `/posts` جلب وعرض منشورات من JSONPlaceholder
-- `/users` جلب وعرض المستخدمين من JSONPlaceholder
+- Shared layout components (Header, Footer, Layout)
+- Imperative routing with `useRouter`
+- A common Button component with typed props
+- Global Montserrat font via Tailwind CSS
+- Custom 404 page

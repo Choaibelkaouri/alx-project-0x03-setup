@@ -1,18 +1,46 @@
-import Header from '@/components/layout/Header';
+import Button from "@/components/common/Button";
+import type { PageRouteProps } from "@/interface";
+import { useRouter } from "next/router";
 
-export default function IndexPage() {
+export default function Home() {
+  const router = useRouter();
+
+  // Imperative routing with useRouter
+  const routeToNextPage = ({ pageRoute }: PageRouteProps) => {
+    router.push(pageRoute, undefined, { shallow: false });
+  };
+
   return (
-    <div>
-      <Header />
-      <main className="max-w-4xl mx-auto px-4 py-8">
-        <h1 className="text-2xl font-bold mb-4">مرحبًا بك في مشروع Next.js Project Setup and Basics</h1>
-        <p className="text-sm text-gray-700 mb-2">
-          هذا المشروع جزء من مهمة SoloForge: Mastering Project Autonomy.
-        </p>
-        <p className="text-sm text-gray-700">
-          استخدم الروابط في الأعلى للتنقل بين الصفحات المختلفة وتجربة المكوّنات.
-        </p>
-      </main>
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center text-center">
+      {/* Welcome Message */}
+      <h1 className="text-4xl font-bold text-gray-800 mb-4">
+        Welcome to Splash App!
+      </h1>
+      <p className="text-lg text-gray-600 mb-8">
+        Your one-stop platform for everything AI you need. Start exploring by
+        navigating to our features below.
+      </p>
+
+      {/* Navigation Options */}
+      <div className="flex flex-wrap gap-6 justify-center">
+        <Button
+          action={() =>
+            routeToNextPage({ pageRoute: "/generate-text-ai" })
+          }
+          buttonLabel="Generate Text"
+          buttonBackgroundColor="blue"
+        />
+        <Button
+          action={() => routeToNextPage({ pageRoute: "/text-to-image" })}
+          buttonLabel="Text to Image"
+          buttonBackgroundColor="green"
+        />
+        <Button
+          action={() => routeToNextPage({ pageRoute: "/counter-app" })}
+          buttonLabel="Contact us"
+          buttonBackgroundColor="orange"
+        />
+      </div>
     </div>
   );
 }
